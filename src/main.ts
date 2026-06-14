@@ -24,8 +24,10 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
 
   const port = process.env.PORT || 3000;
-  await app.listen(port);
-  console.log(`Servidor MotorPrint corriendo en: http://localhost:${port}/api`);
+  await app.listen(port, '0.0.0.0');
+  console.log(
+    `Servidor MotorPrint corriendo en el puerto ${port} y escuchando conexiones externas (0.0.0.0)`,
+  );
 }
 bootstrap().catch((err) => {
   console.error('Error crítico al iniciar la aplicación:', err);

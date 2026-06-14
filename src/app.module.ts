@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { InfluxModule } from './influx/influx.module';
 import { EstudiantesModule } from './estudiantes/estudiantes.module';
 import { SesionesModule } from './sesiones/sesiones.module';
+import { TelemetriaModule } from './telemetria/telemetria.module';
 
 @Module({
   imports: [
@@ -32,6 +33,8 @@ import { SesionesModule } from './sesiones/sesiones.module';
     EstudiantesModule,
 
     SesionesModule,
+
+    TelemetriaModule,
   ],
   controllers: [],
   providers: [],
