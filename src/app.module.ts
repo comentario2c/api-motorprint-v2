@@ -5,6 +5,7 @@ import { InfluxModule } from './influx/influx.module';
 import { EstudiantesModule } from './estudiantes/estudiantes.module';
 import { SesionesModule } from './sesiones/sesiones.module';
 import { TelemetriaModule } from './telemetria/telemetria.module';
+import { RutinasModule } from './rutinas/rutinas.module';
 
 @Module({
   imports: [
@@ -35,6 +36,8 @@ import { TelemetriaModule } from './telemetria/telemetria.module';
     SesionesModule,
 
     TelemetriaModule,
+
+    RutinasModule,
   ],
   controllers: [],
   providers: [],

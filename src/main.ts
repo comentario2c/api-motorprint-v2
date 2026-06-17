@@ -25,9 +25,7 @@ async function bootstrap() {
 
   const port = process.env.PORT || 3000;
   await app.listen(port, '0.0.0.0');
-  console.log(
-    `Servidor MotorPrint corriendo en el puerto ${port} y escuchando conexiones externas (0.0.0.0)`,
-  );
+  console.log(`Servidor MotorPrint corriendo en el puerto ${port}`);
 }
 bootstrap().catch((err) => {
   console.error('Error crítico al iniciar la aplicación:', err);
