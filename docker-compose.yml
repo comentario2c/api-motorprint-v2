@@ -1,0 +1,33 @@
+services:
+  api:
+    build: .
+    container_name: nestjs-api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - mariadb
+      - influxdb
+
+  mariadb:
+    image: mariadb:11
+    container_name: mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 2xtpb0CQ1ejktxuEBECfibR6pHGdjl
+      MYSQL_DATABASE: motorprint
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+  influxdb:
+    image: influxdb:3-core
+    container_name: influxdb
+    restart: unless-stopped
+    volumes:
+      - influxdb_data:/var/lib/influxdb3
+
+volumes:
+  mariadb_data:
+  influxdb_data:
